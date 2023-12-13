@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  zmq_server:
+    build:
+      context: .
+      dockerfile: Dockerfile.server
+    ports:
+      - "5555:5555"
+    network_mode: "host"
+
+  zmq_client:
+    build:
+      context: .
+      dockerfile: Dockerfile.client
+    depends_on:
+      - zmq_server
+    network_mode: "host"
