@@ -6,4 +6,4 @@ Start containers
 docker-compuse up --build
 ```
 You can see messages exchange in docker compose outputs
-BUT it only works if I set  'network_mode = host'
+BUT it only works if I set  'network_mode="host"' in docker-compose
