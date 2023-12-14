@@ -7,7 +7,6 @@ services:
       dockerfile: Dockerfile.server
     ports:
       - "5555:5555"
-    network_mode: "host"
 
   zmq_client:
     build:
