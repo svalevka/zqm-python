@@ -4,13 +4,21 @@ ZMQ server
 '''
 # Server binds to a port
 import zmq
+import time
 
 context = zmq.Context()
-socket = context.socket(zmq.PAIR)
+socket = context.socket(zmq.PUB)
 socket.bind("tcp://*:5555")
 
+
+# List of static messages to be published
+static_messages = [
+    "Hello, World!",
+    "This is a static message.",
+    "Another static message.",
+]
+
 while True:
-    message = socket.recv_string()
-    print(f"Received request: {message}")
-    reply = "World"
-    socket.send_string(reply)
+    for message in static_messages:
+        socket.send_string(message)
+        time.sleep(1)  
