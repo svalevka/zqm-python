@@ -16,4 +16,3 @@ services:
       server: zmq_server
     depends_on:
       - zmq_server
-    # network_mode: "host"
