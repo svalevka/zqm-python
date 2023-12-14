@@ -12,6 +12,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.client
+    environment:
+      server: zmq_server
     depends_on:
       - zmq_server
-    network_mode: "host"
+    # network_mode: "host"

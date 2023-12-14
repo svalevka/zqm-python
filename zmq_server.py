@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
-
+'''
+ZMQ server
+'''
 # Server binds to a port
 import zmq
 

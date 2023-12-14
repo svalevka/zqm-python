@@ -1,10 +1,16 @@
 #!/usr/bin/env python3
+'''
+ZMQ Client
+'''
+
 import zmq
 import time
+import os
+server=os.environ.get("server")
 
 context = zmq.Context()
 socket = context.socket(zmq.PAIR)
-socket.connect("tcp://localhost:5555")
+socket.connect(f"tcp://{server}:5555")
 
 request_number = 0
 while True:  # Infinite loop to keep the client running
