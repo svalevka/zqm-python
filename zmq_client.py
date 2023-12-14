@@ -14,5 +14,5 @@ while True:  # Infinite loop to keep the client running
     message = socket.recv_string()
     print(f"Received reply {request_number} [{message}]")
 
-    time.sleep(3)  # Wait for 3 seconds before sending the next message
+    time.sleep(1)  # Wait for 3 seconds before sending the next message
     request_number += 1
