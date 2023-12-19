@@ -6,7 +6,7 @@ services:
       context: .
       dockerfile: Dockerfile.server
     ports:
-      - "5555:5555"
+      - "42069:42069"
 
   zmq_client:
     build:
@@ -14,5 +14,6 @@ services:
       dockerfile: Dockerfile.client
     environment:
       server: zmq_server
+      # server: 10.8.5.102
     depends_on:
       - zmq_server
